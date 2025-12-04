@@ -1,0 +1,40 @@
+{
+  "name": "monitoring-spirits",
+  "version": "1.0",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx}\"",
+    "lint": "set NODE_ENV=production&& eslint \"**/*.{ts,tsx,js,jsx}\" --fix --max-warnings=0",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.90.11",
+    "@tanstack/react-query-devtools": "^5.91.1",
+    "clsx": "^2.1.1",
+    "next": "16.0.7",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "sass": "^1.94.2",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.7",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-perfectionist": "^4.14.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.7",
+    "prettier": "^3.4.2",
+    "typescript": "^5",
+    "typescript-eslint": "^8.12.2"
+  }
+}

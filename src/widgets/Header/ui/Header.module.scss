@@ -1,0 +1,15 @@
+@use '@/styles/mixins' as globals;
+
+.header {
+   margin-top: 100px;
+   color: white;
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+.spiritsNamesHeaderList {
+   @include globals.flex-row-center;
+   gap: 10px;
+   margin-top: 15px;
+   font-size: 1.25rem;
+}

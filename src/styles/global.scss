@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+$main-black: #0c0c0d;
+$font-stack: 'Inter', sans-serif;
+
+html,
+body {
+   max-width: 100%;
+   overflow-x: hidden;
+   background: $main-black;
+   font-family: $font-stack;
+}
+
+a {
+   color: inherit;
+   text-decoration: none;
+}

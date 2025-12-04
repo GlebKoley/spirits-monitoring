@@ -1,0 +1,92 @@
+@use '@/styles/mixins' as globals;
+
+.spiritCard {
+   @include globals.flex-column;
+   color: white;
+   border-radius: 12px;
+   padding: 20px;
+   position: relative;
+   background: linear-gradient(145deg, #1a1a1a, #222);
+   gap: 20px;
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+   border: 1px solid transparent;
+
+   transition: border 0.3s ease;
+
+   &:hover {
+      border: 1px solid #6366f1;
+   }
+
+   &.-captured {
+      background: #80808012;
+      border: 1px solid transparent;
+   }
+
+   .threat-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+
+      &.low {
+         background-color: #2ecc71;
+         box-shadow: 0 0 12px #2ecc71;
+      }
+      &.medium {
+         background-color: #f1c40f;
+         box-shadow: 0 0 12px #f1c40f;
+      }
+      &.high {
+         background-color: #e67e22;
+         box-shadow: 0 0 12px #e67e22;
+      }
+      &.critical {
+         background-color: #e74c3c;
+         box-shadow: 0 0 12px #e74c3c;
+      }
+   }
+
+   .spiritName {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+   }
+
+   .spiritDetails {
+      @include globals.flex-column;
+      gap: 6px;
+
+      span {
+         opacity: 0.5;
+      }
+
+      .location,
+      .status {
+         font-size: 1rem;
+         color: #aaaaaa;
+      }
+
+      .status {
+         font-weight: 500;
+         letter-spacing: 0.7px;
+      }
+   }
+
+   @keyframes blink {
+      0%,
+      100% {
+         opacity: 0.8;
+         transform: scale(0.9);
+      }
+      50% {
+         opacity: 1;
+         transform: scale(1.1);
+      }
+   }
+}

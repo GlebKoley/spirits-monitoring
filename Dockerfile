@@ -1,4 +1,4 @@
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
 WORKDIR /app
 
@@ -10,19 +10,7 @@ COPY . .
 
 RUN yarn build
 
-FROM node:20-alpine AS runner
-
-WORKDIR /app
-
-COPY --from=builder /app/package.json /app/yarn.lock ./
-
-RUN yarn install --frozen-lockfile --production
-
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-
 USER appuser
 
 ENV NODE_ENV=production

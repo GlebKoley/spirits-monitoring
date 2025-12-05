@@ -12,6 +12,7 @@ export const GET = (req: NextRequest) => {
       start(controller) {
          const interval = setInterval(() => {
             const activeSpirits = dataBase.getAll().filter(({ status }) => status === 'Active');
+
             if (activeSpirits.length === 0) {
                clearInterval(interval);
                controller.close();

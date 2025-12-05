@@ -1,0 +1,39 @@
+@use '@/styles/variables' as v;
+
+$threat-colors: (
+   Low: v.$main-green,
+   Medium: v.$main-yellow,
+   High: v.$light-orange,
+   Critical: v.$main-red,
+);
+
+.threat-dot {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   animation: blink 1.5s infinite;
+   position: absolute;
+   top: 5px;
+   right: 5px;
+   border: 2px solid v.$main-white;
+   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+
+   @each $level, $color in $threat-colors {
+      &.#{$level} {
+         background-color: $color;
+         box-shadow: 0 0 12px $color;
+      }
+   }
+
+   @keyframes blink {
+      0%,
+      100% {
+         opacity: 0.8;
+         transform: scale(0.9);
+      }
+      50% {
+         opacity: 1;
+         transform: scale(1.1);
+      }
+   }
+}

@@ -52,7 +52,7 @@ export const initialData: Spirit[] = [
 ];
 
 let spiritsData = [...initialData];
-//FIXME - TEST TS
+
 export const dataBase = {
    getAll: () => spiritsData,
    reset: () => {

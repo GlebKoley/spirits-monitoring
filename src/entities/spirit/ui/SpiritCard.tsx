@@ -1,5 +1,6 @@
 import { Spirit } from '@/entities/spirit/model/types';
 import { CaptureButton } from '@/features/captureSpirit/ui/CaptureButton';
+import ThreatDot from '@/shared/ui/ThreatDot/ThreatDot';
 
 import styles from './SpiritCard.module.scss';
 
@@ -25,7 +26,7 @@ const SpiritCard = ({ data }: { data: Spirit }) => {
             ))}
          </div>
 
-         {status === 'Active' && <div className={`${styles['threat-dot']} ${styles[threatLevel.toLowerCase()]}`} />}
+         <ThreatDot threatLevel={threatLevel} />
 
          <CaptureButton name={name} id={data.id} isCaptured={status === 'Captured'} />
       </div>

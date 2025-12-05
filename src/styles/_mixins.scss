@@ -1,0 +1,27 @@
+@use '@/styles/variables' as v;
+
+@mixin flex-row-center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@mixin flex-column {
+   display: flex;
+   flex-direction: column;
+}
+
+@mixin text($size, $line, $weight: 400, $family: v.$font-stack) {
+   font-size: $size;
+   line-height: $line;
+   font-weight: $weight;
+   font-family: $family;
+}
+
+@mixin text-20 {
+   @include text(20px, 24px, 700);
+}
+
+@mixin text-16 {
+   @include text(16px, 20px, 500);
+}

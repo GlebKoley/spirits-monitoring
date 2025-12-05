@@ -1,3 +1,5 @@
+@use '@/styles/variables' as v;
+
 .button {
    display: inline-flex;
    align-items: center;
@@ -16,26 +18,18 @@
 }
 
 .primary {
-   background-color: #6366f1;
+   background-color: v.$light-purple;
    color: white;
    &:hover:not(:disabled) {
-      background-color: #4f46e5;
+      background-color: v.$main-purple;
    }
 }
 
 .secondary {
-   background-color: #e2e8f0;
+   background-color: v.$light-gray;
    color: #1e293b;
    &:hover:not(:disabled) {
-      background-color: #cbd5e1;
-   }
-}
-
-.danger {
-   background-color: #ef4444;
-   color: white;
-   &:hover:not(:disabled) {
-      background-color: #dc2626;
+      background-color: v.$main-gray;
    }
 }
 
@@ -47,17 +41,4 @@
 .md {
    padding: 0.75rem 1.5rem;
    font-size: 1rem;
-}
-
-.loader {
-   animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-   from {
-      transform: rotate(0deg);
-   }
-   to {
-      transform: rotate(360deg);
-   }
 }

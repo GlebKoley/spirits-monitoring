@@ -10,10 +10,6 @@ export const metadata: Metadata = {
    manifest: '/manifest.json',
    title: 'Spirit Monitoring',
    description: 'Spirit Monitoring',
-   viewport: {
-      initialScale: 1,
-      width: 'device-width',
-   },
    icons: {
       apple: '/apple-touch-icon.png',
       icon: [

@@ -6,6 +6,9 @@ const POST = async (req: Request) => {
    try {
       const { id } = await req.json();
 
+      const timeout = 300;
+      await new Promise((resolve) => setTimeout(resolve, timeout));
+
       if (Math.random() < 0.3) {
          return NextResponse.json({ success: false, message: 'The spirit is too strong.' }, { status: 400 });
       }

@@ -1,3 +1,6 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
 *,
 *::before,
 *::after {
@@ -6,15 +9,12 @@
    padding: 0;
 }
 
-$main-black: #0c0c0d;
-$font-stack: 'Inter', sans-serif;
-
 html,
 body {
    max-width: 100%;
    overflow-x: hidden;
-   background: $main-black;
-   font-family: $font-stack;
+   background: v.$main-black;
+   font-family: v.$font-stack;
 }
 
 a {

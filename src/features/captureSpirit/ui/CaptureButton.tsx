@@ -1,6 +1,6 @@
 'use client';
 
-import { useCaptureSpirit } from '@/features/captureSpirit/model/queries';
+import { useCaptureSpirit } from '@/features/captureSpirit/model/useCaptureSpirit';
 import { Button } from '@/shared/ui/Button/Button';
 
 import styles from './CaptureButton.module.scss';
@@ -12,16 +12,14 @@ interface CaptureButtonProps {
 }
 
 export const CaptureButton = ({ id, name, isCaptured }: CaptureButtonProps) => {
-   const mutation = useCaptureSpirit();
-   const { mutate, isError, isPending } = mutation;
+   const { mutate, isError } = useCaptureSpirit();
 
    return (
       <div className={styles.captureButtonWrapper}>
          <Button
             size="md"
+            disabled={isCaptured}
             onClick={() => mutate(id)}
-            isLoading={isPending && !isCaptured}
-            disabled={isPending || isCaptured || isError}
             variant={isCaptured ? 'secondary' : 'primary'}
          >
             Capture

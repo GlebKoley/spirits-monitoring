@@ -1,3 +1,5 @@
+@use '@/styles/variables' as v;
+
 .captureButtonWrapper {
    position: relative;
    display: flex;
@@ -12,8 +14,8 @@
       margin-top: 4px;
       padding: 2px 6px;
       font-size: 12px;
-      color: #fff;
-      background-color: #ff4d4f;
+      color: v.$main-white;
+      background-color: v.$main-red;
       border-radius: 4px;
       white-space: nowrap;
       display: none;
